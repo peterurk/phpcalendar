@@ -7,7 +7,7 @@
 require "calendar.php";
 
 $calendar = new calendar;
-$data = $calendar->get();
+$data = $calendar->getCurrent();
 
 ?>
 <style>

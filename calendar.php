@@ -46,9 +46,10 @@ Class calendar
 			// Fill gap at the end with blanks as well
 			$ceil = ((ceil((count($this->_data[$key])/7))*7)-count($this->_data[$key]));
 			for ($blanks = 0;$blanks != $ceil;$blanks++) {
-				$this->_data[$key][] = " ";	
+				$this->_data[$key][] = " ";
 			}
-		}		
+		}
+		
 		return $this->_data;
 	}
 
@@ -59,14 +60,14 @@ Class calendar
 	 * @param  string $year  Year you want to select the month from
 	 * @return array         The Calendar array
 	 */
-	public function getMonth($month = date('n'), $year = date('Y'))
+	public function getMonth($month = TRUE, $year = TRUE) 
 	{
 		if (!is_numeric($month) || $month < 1 || $month > 12) {
-			throw new Exception("Error Processing Request", 1);
+			$month = date('n');
 		}
 
 		if (!is_numeric($year) || $year < 0 || $year > 2050) {
-			throw new Exception("Error Processing Request", 1);
+			$year = date('Y');
 		}
 
 		// Fill month array with days
@@ -96,10 +97,10 @@ Class calendar
 	 * @param string $year Year you want to get
 	 * @return array       The Calendar array
 	 */
-	public function getYear($year = date('Y'))
+	public function getYear($year = TRUE)
 	{
 		if (!is_numeric($year) || $year < 0 || $year > 2050) {
-			throw new Exception("Error Processing Request", 1);
+			$year = date('Y');
 		}
 
 		// Fill data array with month numbers
