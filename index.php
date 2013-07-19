@@ -25,6 +25,7 @@ body {
 .month td {
 	padding: 5px;
 	border: 1px solid #000000;
+	text-align: center;
 }
 </style>
 <table>

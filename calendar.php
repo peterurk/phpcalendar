@@ -12,6 +12,12 @@ Class calendar
 	private $_data;
 
 	/**
+	 * Contains all parameters
+	 * @var array
+	 */
+	public $_params;
+
+	/**
 	 * Constructor
 	 */
 	public function __construct() 
